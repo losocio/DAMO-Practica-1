@@ -5,6 +5,7 @@ class Receta (
     var name: String,
     var image: String,
     var difficulty: String,
-    var calories: Int,
+    var caloriesPerServing: Int,
+    var rating: Double,
     var mealType: String
 ) { }

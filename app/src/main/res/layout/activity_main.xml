@@ -9,17 +9,18 @@
     android:padding="24dp"
     tools:context=".ui.MainActivity">
 
+  <!-- Texto superior -->
   <TextView
       android:id="@+id/textoSuperior"
-
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
+  <!-- Spinner mealType -->
   <Spinner
-      android:id="@+id/spinnerTipo"
+      android:id="@+id/spinnerMealType"
       android:layout_marginTop="24dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/textoSuperior" />
 
+  <!-- RecyclerView recetas -->
   <androidx.recyclerview.widget.RecyclerView
       android:layout_marginTop="12dp"
       android:id="@+id/recyclerRecetas"
@@ -35,6 +37,6 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/spinnerTipo" />
+      app:layout_constraintTop_toBottomOf="@+id/spinnerMealType" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
