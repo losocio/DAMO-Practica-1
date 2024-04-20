@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         //this.nombre = intent.getStringExtra("correo")!!
         //this.uidCurrentUser = intent.getStringExtra("uid")!!
-        binding.textoSuperior.text = "Recetario"
+        binding.textoSuperior.text = "RECETARIO"
 
         // Acciones a realizar sobre los elementos del RecyclerView
-        acciones()
+        //acciones()
 
     }
 
@@ -59,21 +59,24 @@ class MainActivity : AppCompatActivity() {
             for (i in 0..<recetas.length()) {
                 val receta: JSONObject = recetas.getJSONObject(i)
 
+                /* // TODO: pruebo sin gosn qeu creo que da error
                 // Convierto el JSON a un objeto de la clase Receta
                 val recetaOBJ: Receta = Gson().fromJson(receta.toString(), Receta::class.java)
+                 */
+
+                val id = receta.getInt("id")
+                val name = receta.getString("name")
+                val image = receta.getString("image")
+                val difficulty = receta.getString("difficulty")
+                val caloriesPerServing = receta.getInt("caloriesPerServing")
+                val rating = receta.getDouble("rating")
+                val mealType = receta.getString("mealType")
+
+                val recetaOBJ: Receta = Receta(id, name, image, difficulty, caloriesPerServing, rating, mealType)
+
 
                 // Añado recetaOBJ a la lista del adaptador
                 adaptadorReceta.addReceta(recetaOBJ)
-
-                /* Usamos Gson para convertir el JSON a un objeto de la clase Producto
-                val id = producto.getInt("id")
-                val title = producto.getString("title")
-                val description = producto.getString("description")
-                val category = producto.getString("category")
-                val thumbnail = producto.getString("thumbnail")
-                val price = producto.getDouble("price")
-                val productoOBJ: Producto = Producto(id,title,description, thumbnail, category, price)
-                */
 
                 // Guardo un log con el id y el nombre de la receta
                 Log.v("dats", "${recetaOBJ.id} ${recetaOBJ.name}")
@@ -87,6 +90,7 @@ class MainActivity : AppCompatActivity() {
         Volley.newRequestQueue(applicationContext).add(peticion)
     }
 
+    /*
     // Acciones a realizar sobre los eementos del RecyclerView
     fun acciones() {
         binding.spinnerSeleccion.onItemSelectedListener = object :
@@ -118,30 +122,21 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    */
 
     fun instancias() {
         adaptadorReceta = AdaptadorReceta(this)
     }
 
-
     fun persoAdaptadores() {
-        // junta parte grafica con parte logica
-        binding.spinnerSeleccion.adapter = adapterSpinner;
-        // muestra el desplegable de forma visible
-        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        binding.recyclerModelos.adapter = adaptadorReceta
-        binding.recyclerModelos.layoutManager =
+        binding.recyclerRecetas.adapter = adaptadorReceta
+        binding.recyclerRecetas.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.recyclerModelos.layoutManager =
+            binding.recyclerRecetas.layoutManager =
                 GridLayoutManager(this, 2)
         }
-
-        //GridLayoutManager(this,2)
-
-        //LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
 }

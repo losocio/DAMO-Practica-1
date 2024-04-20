@@ -44,14 +44,14 @@ class AdaptadorReceta(var context: Context) : RecyclerView.Adapter<AdaptadorRece
 
         val elemento = lista[position]
 
+        // Asocio imagen con Glide
+        Glide.with(context).load(elemento.image)
+            .placeholder(R.drawable.meal).into(holder.imagen)
+
         // Asocio Nombre, Dificultad y Puntuación
         holder.titulo.text = elemento.name
         holder.dificultad.text = elemento.difficulty
-        holder.dificultad.text = elemento.rating.toString()
-
-        // Asocio imagen con Glide
-        Glide.with(context).load(elemento.image)
-            .placeholder(R.drawable.user).into(holder.imagen)
+        holder.puntuacion.text = elemento.rating.toString()
     }
 
     fun addReceta(x: Receta) {
