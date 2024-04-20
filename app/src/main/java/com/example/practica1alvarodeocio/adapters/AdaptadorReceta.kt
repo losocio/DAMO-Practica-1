@@ -50,10 +50,12 @@ class AdaptadorReceta(var context: Context) : RecyclerView.Adapter<AdaptadorRece
 
         // Asocio Nombre, Dificultad y Puntuación
         holder.titulo.text = elemento.name
-        holder.dificultad.text = elemento.difficulty
-        holder.puntuacion.text = elemento.rating.toString()
+        holder.dificultad.text = "Dificultad: ${elemento.difficulty}"
+        holder.puntuacion.text = "Puntuación: ${elemento.rating}"
+        //holder.puntuacion.text = "Ingredientes: ${elemento.ingredients}"
     }
 
+    // Añadir receta a la lista
     fun addReceta(x: Receta) {
         lista.add(x)
         notifyItemInserted(lista.size - 1)

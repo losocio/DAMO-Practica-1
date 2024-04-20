@@ -1,5 +1,6 @@
 package com.example.practica1alvarodeocio.ui
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             for (i in 0..<recetas.length()) {
                 val receta: JSONObject = recetas.getJSONObject(i)
 
-                /* // TODO: pruebo sin gosn qeu creo que da error
+                /* TODO: pruebo sin GSON, da error
                 // Convierto el JSON a un objeto de la clase Receta
                 val recetaOBJ: Receta = Gson().fromJson(receta.toString(), Receta::class.java)
                  */
@@ -68,12 +69,19 @@ class MainActivity : AppCompatActivity() {
                 val name = receta.getString("name")
                 val image = receta.getString("image")
                 val difficulty = receta.getString("difficulty")
-                val caloriesPerServing = receta.getInt("caloriesPerServing")
                 val rating = receta.getDouble("rating")
-                val mealType = receta.getString("mealType")
 
-                val recetaOBJ: Receta = Receta(id, name, image, difficulty, caloriesPerServing, rating, mealType)
+                // Convierto los arrays de ingredientes e instrucciones a strings
+                val ingredientsArray = receta.getJSONArray("ingredients")
+                val ingredientsList = List(ingredientsArray.length()) { ingredientsArray.getString(it) }
+                val ingredients = ingredientsList.joinToString("\n")
 
+                val instructionsArray = receta.getJSONArray("instructions")
+                val instructionsList = List(instructionsArray.length()) { instructionsArray.getString(it) }
+                val instructions = instructionsList.joinToString("\n")
+
+                // Creo un objeto de la clase Receta
+                val recetaOBJ: Receta = Receta(id, name, image, difficulty, rating, ingredients, instructions)
 
                 // Añado recetaOBJ a la lista del adaptador
                 adaptadorReceta.addReceta(recetaOBJ)
@@ -89,6 +97,7 @@ class MainActivity : AppCompatActivity() {
         // Lanzar la peticion
         Volley.newRequestQueue(applicationContext).add(peticion)
     }
+
 
     /*
     // Acciones a realizar sobre los eementos del RecyclerView
