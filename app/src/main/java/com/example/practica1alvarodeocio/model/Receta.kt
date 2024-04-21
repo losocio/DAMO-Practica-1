@@ -7,9 +7,9 @@ class Receta (
     var name: String,
     var image: String,
     var difficulty: String,
-    //var caloriesPerServing: Int,
+    // var caloriesPerServing: Int,
     var rating: Double,
-    //var mealType: String,
+    // var mealType: String,
     var ingredients: String,
     var instructions: String
 ) { }

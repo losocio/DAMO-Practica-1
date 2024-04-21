@@ -1,21 +1,35 @@
 package com.example.practica1alvarodeocio.ui
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.practica1alvarodeocio.R
 
 class SelectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_select)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        val textViewNombre = findViewById<TextView>(R.id.nombre)
+        val imageViewImagen = findViewById<ImageView>(R.id.imagen)
+        val textViewIngredientes = findViewById<TextView>(R.id.ingredientes)
+        val textViewPasos = findViewById<TextView>(R.id.pasos)
+
+        val intent = intent
+        val nombre = intent?.getStringExtra("nombre")
+        val imagen = intent?.getStringExtra("imagen")
+        val ingredientes = intent?.getStringExtra("ingredientes")
+        val pasos = intent?.getStringExtra("pasos")
+
+        textViewNombre.text = nombre
+
+        Glide.with(this).load(imagen)
+            .placeholder(R.drawable.meal).into(imageViewImagen)
+
+        textViewIngredientes.text = ingredientes
+        textViewPasos.text = pasos
+
     }
 }

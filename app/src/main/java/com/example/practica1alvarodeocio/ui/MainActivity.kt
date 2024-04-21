@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         instancias()
         persoAdaptadores()
 
+
         // Hago la peticion
         peticionJSON()
 
@@ -74,11 +75,11 @@ class MainActivity : AppCompatActivity() {
                 // Convierto los arrays de ingredientes e instrucciones a strings
                 val ingredientsArray = receta.getJSONArray("ingredients")
                 val ingredientsList = List(ingredientsArray.length()) { ingredientsArray.getString(it) }
-                val ingredients = ingredientsList.joinToString("\n")
+                val ingredients = ingredientsList.joinToString(", ")
 
                 val instructionsArray = receta.getJSONArray("instructions")
                 val instructionsList = List(instructionsArray.length()) { instructionsArray.getString(it) }
-                val instructions = instructionsList.joinToString("\n")
+                val instructions = instructionsList.joinToString("\n\n")
 
                 // Creo un objeto de la clase Receta
                 val recetaOBJ: Receta = Receta(id, name, image, difficulty, rating, ingredients, instructions)
@@ -97,7 +98,6 @@ class MainActivity : AppCompatActivity() {
         // Lanzar la peticion
         Volley.newRequestQueue(applicationContext).add(peticion)
     }
-
 
     /*
     // Acciones a realizar sobre los eementos del RecyclerView
