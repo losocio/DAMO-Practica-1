@@ -90,28 +90,4 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
 
         }
     }
-    /*TODO: Old onClick
-    override fun onClick(v: View?) {
-        when(v!!.id){
-            binding.botonLogin.id->{
-                if(!binding.editCorreo.text.toString().isEmpty() &&
-                    !binding.editPass.text.toString().isEmpty()){
-
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    intent.putExtra("correo", binding.editCorreo.text.toString())
-                    startActivity(intent)
-
-                }
-
-
-            }
-            binding.botonSignUp.id->{
-                val intent = Intent(applicationContext, SignupActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-        }
-    }
-    */
-
 }

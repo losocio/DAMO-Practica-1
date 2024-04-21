@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adaptadorReceta: AdaptadorReceta
-    //private lateinit var uidCurrentUser: String
-    //private lateinit var nombre: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,16 +35,10 @@ class MainActivity : AppCompatActivity() {
         instancias()
         persoAdaptadores()
 
-
         // Hago la peticion
         peticionJSON()
 
-        //this.nombre = intent.getStringExtra("correo")!!
-        //this.uidCurrentUser = intent.getStringExtra("uid")!!
         binding.textoSuperior.text = "RECETARIO"
-
-        // Acciones a realizar sobre los elementos del RecyclerView
-        //acciones()
 
     }
 
@@ -98,40 +90,6 @@ class MainActivity : AppCompatActivity() {
         // Lanzar la peticion
         Volley.newRequestQueue(applicationContext).add(peticion)
     }
-
-    /*
-    // Acciones a realizar sobre los eementos del RecyclerView
-    fun acciones() {
-        binding.spinnerSeleccion.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-
-                val selecccion: Marca = parent!!.adapter.getItem(position) as Marca
-
-                // filtrar la lista -> DATASET OK
-                // cambiar la lista -> ADAPTADOR
-                // adaptadorModelo.cambiarLista(DataSet.getAllModelos(selecccion.nombre))
-
-
-                Snackbar.make(
-                    binding.root,
-                    "${selecccion.nombre} ${selecccion.calidad}",
-                    Snackbar.LENGTH_SHORT
-                ).show()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-        }
-    }
-    */
 
     fun instancias() {
         adaptadorReceta = AdaptadorReceta(this)
