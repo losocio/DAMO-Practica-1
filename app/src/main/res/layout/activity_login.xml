@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/login" />
+        android:src="@drawable/chef" />
 
 
     <EditText
@@ -22,13 +22,13 @@
         android:layout_marginTop="32dp"
         android:drawableLeft="@drawable/user"
         android:gravity="center"
-        android:hint="Por favor introduzca su email"
+        android:hint="@string/por_favor_introduzca_su_email"
         />
     <EditText
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Por favor introduzca su contraseña"
+        android:hint="@string/por_favor_introduzca_su_contrase_a"
         android:id="@+id/editPass"
         android:gravity="center"
         android:drawableLeft="@drawable/pass"
@@ -38,7 +38,7 @@
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:id="@+id/botonLogin"
         />
 
@@ -53,14 +53,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿No tiene cuenta?"
+            android:text="@string/no_tiene_cuenta"
             android:layout_marginRight="12dp"
             />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crear cuenta"
+            android:text="@string/crear_cuenta"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:textColor="@color/primary"
             android:id="@+id/botonSignUp"

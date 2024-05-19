@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="90dp"
         android:paddingRight="75dp"
-        android:text="Registro"
+        android:text="@string/registro"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:gravity="center"
-        android:hint="Introduzca nombre"
+        android:hint="@string/introduzca_nombre"
         app:layout_constraintEnd_toEndOf="@+id/textoRegistro"
         app:layout_constraintStart_toStartOf="@+id/textoRegistro"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:hint="Introduzca correo"
+        android:hint="@string/introduzca_correo"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/textoRegistro"
         app:layout_constraintStart_toStartOf="@+id/textoRegistro"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:hint="Introduzca contraseña"
+        android:hint="@string/introduzca_contrasena"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/textoRegistro"
         app:layout_constraintStart_toStartOf="@+id/textoRegistro"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:hint="Repita contraseña"
+        android:hint="@string/repita_contrasena"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/textoRegistro"
         app:layout_constraintStart_toStartOf="@+id/textoRegistro"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Registrar"
+        android:text="@string/registrar"
         app:layout_constraintTop_toBottomOf="@+id/editCorreo" />
 
 

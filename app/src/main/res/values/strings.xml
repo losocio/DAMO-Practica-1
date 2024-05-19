@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Practica 1 Alvaro de Ocio</string>
+    <string name="por_favor_introduzca_su_email">Por favor introduzca su email</string>
+    <string name="no_tiene_cuenta">¿No tiene cuenta?</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="login">Login</string>
+    <string name="por_favor_introduzca_su_contrase_a">Por favor introduzca su contraseña</string>
+    <string name="nombre">NOMBRE</string>
+    <string name="dificultad">DIFICULTAD</string>
+    <string name="puntuacion">PUNTUACION</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="pasos">Pasos</string>
+    <string name="nombre_receta">Nombre receta</string>
+    <string name="registro">Registro</string>
+    <string name="introduzca_nombre">Introduzca nombre</string>
+    <string name="introduzca_correo">Introduzca correo</string>
+    <string name="introduzca_contrasena">Introduzca contraseña</string>
+    <string name="repita_contrasena">Repita contraseña</string>
+    <string name="registrar">Registrar</string>
 </resources>

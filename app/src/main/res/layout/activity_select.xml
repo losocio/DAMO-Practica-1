@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="nombre"
+        android:text="@string/nombre_receta"
         android:textSize="30sp"/>
 
     <!-- Imagen -->
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Ingredientes"
+        android:text="@string/ingredientes"
         android:padding="16dp"/>
 
     <!-- Receta -->
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ingredientes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Pasos"
+        android:text="@string/pasos"
         android:padding="16dp"/>
 
     <!--
