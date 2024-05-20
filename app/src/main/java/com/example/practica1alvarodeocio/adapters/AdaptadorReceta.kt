@@ -42,7 +42,7 @@ class AdaptadorReceta(var context: Context) : RecyclerView.Adapter<AdaptadorRece
 
     // Cuantos elementos tengo pintar -> LOS QUE HAY EN LA LISTA A REPRESENTAR
     override fun getItemCount(): Int {
-        return lista.size;
+        return lista.size
     }
 
     // Asociar el holder (XML) con datos de la LISTA
@@ -56,7 +56,7 @@ class AdaptadorReceta(var context: Context) : RecyclerView.Adapter<AdaptadorRece
 
         // Asocio Nombre, Dificultad y Puntuación
         holder.titulo.text = elemento.name
-        holder.dificultad.text = "Dificultad: ${elemento.difficulty}"
+        holder.dificultad.text = context.getString(R.string.dificultad1, elemento.difficulty)
         holder.puntuacion.text = "Puntuación: ${elemento.rating}"
         //holder.puntuacion.text = "Ingredientes: ${elemento.ingredients}"
 

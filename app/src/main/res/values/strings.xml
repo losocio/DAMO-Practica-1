@@ -17,4 +17,5 @@
     <string name="introduzca_contrasena">Introduzca contraseña</string>
     <string name="repita_contrasena">Repita contraseña</string>
     <string name="registrar">Registrar</string>
+    <string name="dificultad1">Dificultad: %1$s</string>
 </resources>
